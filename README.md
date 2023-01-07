@@ -1,1 +1,2 @@
-# CS6290
+# CS6290 Advanced Computer Architecture Coursework Projects
+
