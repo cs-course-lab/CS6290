@@ -1,0 +1,17 @@
+Student Name: Byeongyong GO, GTID: 903817192
+
+Report for Part F
+
+I implemented a modified version of the Cache Partitioning method of the provided paper, Utility-Based Cache Partitioning~.
+
+The implemented scheme initially starts with 50% partitioning.
+It's monitor period is per 10000 l2 Cache accesses, so for each period it measures the Cache Miss ratio of each cores.
+If the sum of the Cache Miss ratios until the prior period is bigger than the sum of the Cache Miss ratios until the current period,
+It means that the current partition is better than prior one, so it checkes whether the prior partition is bigger for core 0 than the current partition. 
+If the current partition is smaller than the prior one, it decrements the partition by one. If not, it increments it by one.
+
+Else if the sum of the Cache Miss ratios until the prior period is smaller, it does the same thing in am opposite way(increment <-> decrement).
+To avoid any kind of zero-way core, it assures at least one way per core.
+So it monitors the l2 Cache miss ratios for each period and dynamically adjusts the partitioning.
+
+As a result, it produces the least L2 Cache Miss Rate for mix1, which is 69.xx % and this is lower more than 1% compared to D of Mix1 or E2(50% partition) of Mix1.

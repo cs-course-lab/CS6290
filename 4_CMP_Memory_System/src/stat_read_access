@@ -1,0 +1,8 @@
+./dram.cpp:    if (dram->stat_read_access)
+./dram.cpp:        avg_read_delay = (double)(dram->stat_read_delay) /
+./dram.cpp:                         (double)(dram->stat_read_access);
+./dram.cpp:    if (dram->stat_write_access)
+./dram.cpp:        avg_write_delay = (double)(dram->stat_write_delay) /
+./dram.cpp:                          (double)(dram->stat_write_access);
+./dram.cpp:    printf("DRAM_READ_ACCESS     \t\t : %10llu\n", dram->stat_read_access);
+./dram.cpp:    printf("DRAM_WRITE_ACCESS    \t\t : %10llu\n", dram->stat_write_access);
